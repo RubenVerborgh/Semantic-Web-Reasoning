@@ -121,3 +121,10 @@ iframe {
   width: 840px;
   height: 540px;
 }
+
+.slide pre {
+  overflow: scroll;
+}
+.slide pre code {
+  line-height: 1.7;
+}
