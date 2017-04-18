@@ -141,9 +141,15 @@
 <span class="next">{ dbr:Tim_Berners-Lee foaf:knows dbr:Ted.  }</span>
 <span class="next">=&gt;</span>
 <span class="next">{ dbr:Ted foaf:knows dbr:Tim. }.</span>
-
-
 </code></pre>
+  </div>
+
+  <div class="slide" id="ted-knows-tim-rule">
+    <h2>
+      The EYE reasoner can produce inferences<br>
+      by executing Notation3 rules.
+    </h2>
+    <iframe class="eye" src="eye-client/#data=tim.n3&amp;data=tim-knows-ted-rule.n3&amp;query=query.n3"></iframe>
   </div>
 
   <div class="black toc slide" id="ontologies">
@@ -174,10 +180,5 @@
     <a href="https://github.com/RubenVerborgh/Semantic-Web-Reasoning">Discuss on GitHub</a>
   </footer>
   <script src="scripts/shower.min.js"></script>
-  <script>
-    setInterval(function (e) {
-      ((e = document.activeElement).tagName === 'IFRAME') && e.blur();
-    }, 100);
-  </script>
 </body>
 </html>

@@ -1,0 +1,2 @@
+# Find and return all triples
+{ ?s ?p ?o. } => { ?s ?p ?o. }.

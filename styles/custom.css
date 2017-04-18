@@ -121,6 +121,9 @@ iframe {
   width: 840px;
   height: 540px;
 }
+iframe.eye {
+  height: 480px;
+}
 
 .slide pre {
   overflow: scroll;
