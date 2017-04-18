@@ -110,11 +110,17 @@ p.author {
 
 p.source {
   line-height: 1.5;
+  position: absolute;
+  right: 40px;
+  bottom: 20px;
 }
 p.source img {
   float: left;
   margin: .1em .5em 2em 0;
   width: 3em;
+}
+.slide.black p.source, .slide.black p.source * {
+  color: #1e64c8 !important;
 }
 
 iframe {
