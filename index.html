@@ -145,7 +145,7 @@ PREFIX rdf:  &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
 
   <div class="slide" id="notation3-rules">
     <h2>
-      Rules in Notation3 are also expressed as triples.<br>
+      Rules in Notation3 are also expressed as triples<br>
       through if–then implications.
     </h2>
 <pre><code>
@@ -303,12 +303,51 @@ foaf:knows a rdf:Property.
     </p>
   </div>
 
-  <div class="slide" id="ex-hasFriend">
+  <div class="slide" id="hasFriend">
     <h2>
       Based on 1 data triple and 1 ontology triple,<br>
       a reasoner can derive a lot of knowledge.
     </h2>
     <iframe class="eye" src="eye-client/#data=tim-friend.n3&amp;data=hasFriend.n3&amp;data=existing.n3&amp;query=query.n3"></iframe>
+  </div>
+
+  <div class="slide" id="hasFriend-not-symmetric">
+    <h2>
+      Why is our hasFriend relation not symmetric<br>
+      even though foaf:knows is?
+    </h2>
+    <p>Perhaps a rule is missing?</p>
+<pre class="next"><code>{ ?propertyA rdfs:subPropertyOf ?propertyB.
+  ?propertyB rdf:type owl:SymmetricProperty. }
+=&gt;
+{ ?propertyA rdf:type owl:SymmetricProperty.  }.
+  </code></pre>
+    <p class="next"><strong>This would have unintended consequences!</strong></p>
+  </div>
+
+  <div class="slide" id="trust-predefined-rules">
+    <h2>
+      Another reason to reuse existing rules:<br>
+      they have been tested or even proven correct.
+    </h2>
+    <ul>
+      <li class="next">
+        A guarantee on a more general property<br>
+        does not necessarily hold on more specific properties.
+      </li>
+      <li class="next">
+        “hasFriend” is a subproperty of “knows”
+        <ul>
+          <li class="next"> both happen to be symmetric</li>
+        </ul>
+      </li>
+      <li class="next">
+        “isFatherOf” is a subproperty of “knows”
+        <ul>
+          <li class="next"> clearly, “isFatherOf” is not symmetric</li>
+        </ul>
+      </li>
+    </ul>
   </div>
 
   <div class="black toc slide" id="review">
