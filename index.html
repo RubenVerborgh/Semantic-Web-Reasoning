@@ -138,7 +138,7 @@
 <span class="next">{ … }  log:implies  { … }.</span>
 <span class="next">{ … }      =&gt;       { … }.</span>
 
-<span class="next">{ dbr:Tim_Berners-Lee foaf:knows dbr:Ted.  }</span>
+<span class="next">{ dbr:Tim_Berners-Lee foaf:knows dbr:Ted. }</span>
 <span class="next">=&gt;</span>
 <span class="next">{ dbr:Ted foaf:knows dbr:Tim. }.</span>
 </code></pre>
@@ -152,6 +152,31 @@
     <iframe class="eye" src="eye-client/#data=tim.n3&amp;data=tim-knows-ted-rule.n3&amp;query=query.n3"></iframe>
   </div>
 
+  <div class="slide" id="notation3-variables">
+    <h2>
+      Through the use of variables,<br>
+      we can make rules more generic.
+    </h2>
+<pre><code>
+{ dbr:Tim_Berners-Lee foaf:knows dbr:Ted. }
+=&gt;
+{ dbr:Ted foaf:knows dbr:Tim. }.
+<span class="next">
+{ <strong>?personA</strong> foaf:knows <strong>?personB</strong>. }
+=&gt;
+{ <strong>?personB</strong> foaf:knows <strong>?personA</strong>. }.
+</span>
+</code></pre>
+  </div>
+
+  <div class="slide" id="knows-rule">
+    <h2>
+      EYE will instantiate variables at runtime<br>
+      in order to execute the rules.
+    </h2>
+    <iframe class="eye" src="eye-client/#data=tim.n3&amp;data=knows-rule.n3&amp;query=query.n3"></iframe>
+  </div>
+
   <div class="black toc slide" id="ontologies">
     <h2><a href="#cover">Rule-based reasoning on the Semantic Web</a></h2>
     <ul>
@@ -160,7 +185,6 @@
       <li class="current"><a href="#ontologies">Abstracting knowledge in ontologies</a></li>
     </ul>
   </div>
-
 
   <div class="black toc slide" id="review">
     <h2><a href="#cover">Rule-based reasoning on the Semantic Web</a></h2>
