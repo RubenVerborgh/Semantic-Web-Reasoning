@@ -131,3 +131,11 @@ iframe.eye {
 .slide pre code {
   line-height: 1.7;
 }
+
+blockquote {
+  margin-top: 2em !important;
+}
+blockquote p {
+  font-size: 2em;
+  font-weight: bold;
+}
