@@ -1,0 +1,123 @@
+li {
+  font-weight: bold;
+  font-size: 24pt;
+  line-height: 1.6;
+  margin-top: 20pt;
+}
+li li {
+  font-weight: normal;
+  font-size: 20pt;
+  margin-top: 8pt;
+}
+
+div.slide {
+  counter-reset: section !important;
+}
+ol > li::before {
+  counter-increment: section !important;
+  content: counter(section) ". " !important;
+}
+
+
+
+a.image {
+  background: transparent;
+}
+img.right {
+  float: right;
+  max-width: 250px;
+  margin-right: -20px;
+}
+img.top {
+  position: relative;
+  margin-top: -80px;
+}
+
+
+
+code {
+  font-family: Consolas, "Courier New", Courier, monospace;
+}
+.comment {
+  color: #999999;
+}
+.overlay {
+  color: white;
+  font-size: 36px;
+  position: absolute;
+  bottom: 20px;
+  text-shadow: 2px 2px 5px black;
+}
+
+
+
+.title h2 {
+  line-height: 1.3;
+  margin-top: 120px;
+  font-size: 56px;
+}
+.title a {
+  background: none;
+}
+.title .author {
+  font-size: 30px;
+}
+
+
+
+table img {
+  max-height: 250px;
+}
+
+th, td {
+  padding: 0 1em 0 0;
+}
+
+tr th:first-child {
+  text-align: right;
+}
+
+table.seamless tr > * {
+  background: transparent !important;
+}
+
+
+
+.toc h2 {
+  font-size: 28pt;
+  line-height: 1.6;
+  margin: 80px 0 0 60px;
+}
+
+.toc li {
+  margin-left: 80px;
+  font-weight: normal;
+}
+.toc li.current {
+  font-weight: bold;
+}
+.toc li:before {
+  content: '' !important;
+}
+
+.toc a:not(:hover) {
+  background: none;
+}
+
+p.author {
+  font-weight: 500;
+}
+
+p.source {
+  line-height: 1.5;
+}
+p.source img {
+  float: left;
+  margin: .1em .5em 2em 0;
+  width: 3em;
+}
+
+iframe {
+  width: 840px;
+  height: 540px;
+}

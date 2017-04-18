@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1024" height="640">
+	<defs>
+		<style>
+			path {
+				fill:none;
+				stroke:#FF4AFF;
+				stroke-width:0.01;
+				}
+			path:first-child {
+				stroke-width:0.03;
+				}
+		</style>
+		<g id="horizontal">
+			<path d="M 0,0 H 1024"/>
+			<path d="M 0,1 H 1024"/>
+			<path d="M 0,2 H 1024"/>
+			<path d="M 0,3 H 1024"/>
+		</g>
+		<g id="vertical">
+			<path d="M 0,0 V  640"/>
+			<path d="M 1,0 V  640"/>
+			<path d="M 2,0 V  640"/>
+			<path d="M 3,0 V  640"/>
+		</g>
+	</defs>
+	<g transform="scale(36.5714,32)">
+		<use xlink:href="#vertical"   x= "0"/>
+		<use xlink:href="#vertical"   x= "4"/>
+		<use xlink:href="#vertical"   x= "8"/>
+		<use xlink:href="#vertical"   x="12"/>
+		<use xlink:href="#vertical"   x="16"/>
+		<use xlink:href="#vertical"   x="20"/>
+		<use xlink:href="#vertical"   x="24"/>
+		<use xlink:href="#vertical"   x="28"/>
+
+		<use xlink:href="#horizontal" y= "0"/>
+		<use xlink:href="#horizontal" y= "4"/>
+		<use xlink:href="#horizontal" y= "8"/>
+		<use xlink:href="#horizontal" y="12"/>
+		<use xlink:href="#horizontal" y="16"/>
+		<use xlink:href="#horizontal" y="20"/>
+	</g>
+</svg>
