@@ -109,9 +109,9 @@
       using the Notation3 syntax.
     </h2>
 <pre><code>
-@prefix dbr:  &lt;http://dbpedia.org/resource/&gt;.
-@prefix foaf: &lt;http://xmlns.com/foaf/0.1/&gt;.
-@prefix rdf:  &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;.
+PREFIX dbr:  &lt;http://dbpedia.org/resource/&gt;
+PREFIX foaf: &lt;http://xmlns.com/foaf/0.1/&gt;
+PREFIX rdf:  &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
 
 <span class="next">dbr:Tim_Berners-Lee foaf:knows dbr:Ted.</span>
 <span class="next">dbr:Tim_Berners-Lee foaf:givenName "Tim".</span>
@@ -184,6 +184,92 @@
       <li><a href="#rules">Reasoning using rules</a></li>
       <li class="current"><a href="#ontologies">Abstracting knowledge in ontologies</a></li>
     </ul>
+  </div>
+
+  <div class="slide" id="recall-property-resource">
+    <h2>
+      Recall that a link type<br>
+      is also a resource we can describe.
+    </h2>
+    <iframe class="graph" src="images/property.html"></iframe>
+  </div>
+
+  <div class="slide" id="foaf-knows-properties">
+    <h2>
+      For example, we can describe<br>
+      the foaf:knows property.
+    </h2>
+<pre><code>
+foaf:knows a rdf:Property.
+<span class="next">foaf:knows rdfs:domain foaf:Person.</span>
+<span class="next">foaf:knows rdfs:range  foaf:Person.</span>
+<span class="next">foaf:knows rdf:type owl:SymmetricProperty.</span>
+</code></pre>
+  </div>
+
+  <div class="slide" id="generic-rules">
+    <h2>
+      Instead of capturing foaf:knows with rules,<br>
+      let’s capture its properties.
+    </h2>
+<pre><code>
+{ ?personA foaf:knows ?personB. }
+=&gt;
+{ ?personB foaf:knows ?personA. }.
+
+<span class="next">{ <strong>?property</strong> rdf:type owl:SymmetricProperty.</span>
+<span class="next">  ?thingA <strong>?property</strong> ?thingB. }</span>
+<span class="next">=&gt;</span>
+<span class="next">{ ?thingB <strong>?property</strong> ?thingA. }.</span>
+</code></pre>
+  </div>
+
+  <div class="slide" id="knows-ontology">
+    <h2>
+      Defining rules at the ontological level<br>
+      makes a vocabulary declarative.
+    </h2>
+    <iframe class="eye" src="eye-client/#data=tim.n3&amp;data=knows.n3&amp;data=symmetric-property.n3&amp;query=query.n3"></iframe>
+  </div>
+
+  <div class="slide" id="ontology-rules">
+    <h2>
+      Rules for many common properties already exist<br>
+      and can therefore be reused.
+    </h2>
+    <p>
+      Available from the <a href="http://eulersharp.sourceforge.net/">EYE website</a>:
+    </p>
+    <ul>
+      <li> <a href="http://eulersharp.sourceforge.net/2003/03swap/rdfs-domain.html">rdfs:domain</a></li>
+      <li> <a href="http://eulersharp.sourceforge.net/2003/03swap/rdfs-range.html">rdfs:range</a></li>
+      <li> <a href="http://eulersharp.sourceforge.net/2003/03swap/owl-SymmetricProperty.html">owl:SymmetricProperty</a></li>
+      <li> … (36 theories for RDFS and OWL)</li>
+    </ul>
+  </div>
+
+  <div class="slide" id="avoid-rules">
+    <h2>
+      Therefore, avoid writing rules<br>
+      when using rule-based reasoning.
+    </h2>
+    <p class="next">
+      If you define a new property,
+      describe it using other properties instead:
+    </p>
+    <pre class="next"><code>ex:hasFriend rdfs:subPropertyOf foaf:knows.
+    </code></pre>
+    <p class="next">
+      Only if this is insufficient, define custom rules.
+    </p>
+  </div>
+
+  <div class="slide" id="ex-hasFriend">
+    <h2>
+      Based on 1 data triple and 1 ontology triple,<br>
+      a reasoner can derive a lot of knowledge.
+    </h2>
+    <iframe class="eye" src="eye-client/#data=tim-friend.n3&amp;data=hasFriend.n3&amp;data=existing.n3&amp;query=query.n3"></iframe>
   </div>
 
   <div class="black toc slide" id="review">

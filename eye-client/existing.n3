@@ -1,0 +1,15 @@
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+
+foaf:knows a owl:SymmetricProperty.
+foaf:knows rdfs:domain foaf:Person.
+foaf:knows rdfs:range  foaf:Person.
+
+{?P rdfs:domain ?C. ?X ?P ?Y} => {?X a ?C}.
+{?P rdfs:range  ?C. ?X ?P ?Y} => {?Y a ?C}.
+{?P a owl:SymmetricProperty. ?S ?P ?O} => {?O ?P ?S}.
+{?P rdfs:subPropertyOf ?Q. ?S ?P ?O} => {?S ?Q ?O}.
+{?P rdfs:subPropertyOf ?Q. ?Q rdfs:subPropertyOf ?R} => {?P rdfs:subPropertyOf ?R}.
+{?P rdfs:subPropertyOf ?Q. ?Q rdfs:domain ?C} => {?P rdfs:domain ?C}.
+{?P rdfs:subPropertyOf ?Q. ?Q rdfs:range ?C} => {?P rdfs:range ?C}.

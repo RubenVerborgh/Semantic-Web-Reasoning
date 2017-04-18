@@ -1,0 +1,4 @@
+PREFIX ppl: <http://example.org/people#>
+PREFIX ex: <http://example.org/#>
+
+ppl:Tim ex:hasFriend ppl:Ted.

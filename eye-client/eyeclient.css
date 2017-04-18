@@ -39,9 +39,8 @@ html, input, textarea, button {
   padding: .5em 1em;
 }
 
-.eye .ui-tabs-nav .label {
-  margin: .3em 1.5em 0 .6em;
-  min-width: 5em;
+.eye .ui-tabs-nav .label, li.query {
+  display: none;
 }
 
 .eye .ui-tabs .ui-tabs-nav li a {
