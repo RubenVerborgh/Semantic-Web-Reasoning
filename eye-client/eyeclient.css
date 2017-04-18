@@ -46,3 +46,28 @@ html, input, textarea, button {
 .eye .ui-tabs .ui-tabs-nav li a {
   padding: .3em 1em;
 }
+
+.eye .ui-state-active {
+  background: #1E64C8;
+}
+
+.eye .ui-tabs {
+  border: 0;
+  padding: 0;
+}
+.eye .ui-tabs-nav {
+  background: none;
+  padding: 0;
+  border: 0;
+}
+.eye .ui-tabs-panel {
+  padding: 1em 0;
+}
+.eye [role=tab] {
+  border-width: 3px;
+  border-color: #1E64C8;
+}
+.eye .ui-button {
+  border-width: 3px;
+  font-weight: bold;
+}
