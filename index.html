@@ -127,7 +127,7 @@ PREFIX dbr:  &lt;http://dbpedia.org/resource/&gt;
 PREFIX foaf: &lt;http://xmlns.com/foaf/0.1/&gt;
 PREFIX rdf:  &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
 
-<span class="next">dbr:Tim_Berners-Lee foaf:knows dbr:Ted.</span>
+<span class="next">ppl:Tim_Berners-Lee foaf:knows dbr:Ted_Nelson.</span>
 <span class="next">dbr:Tim_Berners-Lee foaf:givenName "Tim".</span>
 
 <span class="next">foaf:knows rdf:type rdf:Property.</span>
@@ -152,9 +152,9 @@ PREFIX rdf:  &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
 <span class="next">{ … }  log:implies  { … }.</span>
 <span class="next">{ … }      =&gt;       { … }.</span>
 
-<span class="next">{ dbr:Tim_Berners-Lee foaf:knows dbr:Ted. }</span>
+<span class="next">{ ppl:Tim foaf:knows ppl:Ted. }</span>
 <span class="next">=&gt;</span>
-<span class="next">{ dbr:Ted foaf:knows dbr:Tim. }.</span>
+<span class="next">{ ppl:Ted foaf:knows ppl:Tim. }.</span>
 </code></pre>
   </div>
 
@@ -172,9 +172,9 @@ PREFIX rdf:  &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
       we can make rules more generic.
     </h2>
 <pre><code>
-{ dbr:Tim_Berners-Lee foaf:knows dbr:Ted. }
+{ ppl:Tim foaf:knows ppl:Ted. }
 =&gt;
-{ dbr:Ted foaf:knows dbr:Tim. }.
+{ ppl:Ted foaf:knows ppl:Tim. }.
 <span class="next">
 { <strong>?personA</strong> foaf:knows <strong>?personB</strong>. }
 =&gt;
