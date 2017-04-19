@@ -145,3 +145,11 @@ blockquote p {
   font-size: 2em;
   font-weight: bold;
 }
+
+img.socrates {
+  height: 1700px;
+  position: absolute;
+  top: -150px;
+  right: -340px;
+  z-index: -1;
+}
