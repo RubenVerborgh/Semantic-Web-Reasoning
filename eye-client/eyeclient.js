@@ -140,7 +140,7 @@
         $tabLink = $('<li>').addClass(cssClass)
                             .append($('<a>').attr('href', '#' + tabId)
                             .text(title)),
-        $tab = $('<textarea>').attr('id', tabId)
+        $tab = $('<textarea>').attr({ id:  tabId, spellcheck: false })
                               .addClass(cssClass)
                               .data('link', $tabLink);
     $tabList.append($tabLink);
