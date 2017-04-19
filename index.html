@@ -312,10 +312,59 @@ PREFIX rdf:  &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
     </ul>
   </div>
 
+  <div class="slide" id="rdf-type">
+    <h2>
+      rdf:type is a property stating that<br>
+      a resource is an instance of a class.
+    </h2>
+    <ul>
+      <li>
+        Resources can (and do) have multiple classes.
+      </li>
+    </ul>
+    <pre><code>ppl:Tim <strong>rdf:type</strong> foaf:Person.
+ppl:Tim <strong>rdf:type</strong> ex:ComputerScientist.
+
+<strong>rdf:type</strong> <strong>rdf:type</strong> rdf:Property.</code></pre>
+  </div>
+
+  <div class="slide" id="rdfs-subpropertyof">
+    <h2>
+      rdfs:subPropertyOf is a property stating<br>
+      a property is more specific than another.
+    </h2>
+    <ul>
+      <li>
+        If the subproperty holds for a subject and object,<br>
+        the less specific property also holds.
+      </li>
+    </ul>
+    <pre><code>ex:hasFriend <strong>rdfs:subPropertyOf</strong> foaf:knows.
+
+rdfs:range   <strong>rdfs:subPropertyOf</strong> rdfs:seeAlso.
+rdfs:domain  <strong>rdfs:subPropertyOf</strong> rdfs:seeAlso.
+</code></pre>
+  </div>
+
+  <div class="slide" id="symmetry-reflexivity-transitivity">
+    <h2>
+      OWL contains similar properties for<br>
+      symmetry, reflexivity, and transitivity.
+    </h2>
+    <ul>
+      <li> owl:SymmetricProperty</li>
+      <li> owl:ReflexiveProperty</li>
+      <li> owl:TransitiveProperty</li>
+    </ul>
+    <pre><code>ex:isMarriedTo a <strong>owl:SymmetricProperty</strong>.
+ex:hasSameAge a <strong>owl:ReflexiveProperty</strong>.
+owl:isFamilyMemberOf a <strong>owl:TransitiveProperty</strong>.</code></pre>
+  </div>
+
   <div class="slide" id="foaf-knows-properties">
     <h2>
-      For example, we can describe<br>
-      the foaf:knows property.
+      Ontologies use these properties and classes<br>
+      to define their own concepts.
     </h2>
 <pre><code>
 foaf:knows a rdf:Property.
@@ -327,8 +376,8 @@ foaf:knows a rdf:Property.
 
   <div class="slide" id="generic-rules">
     <h2>
-      Instead of capturing foaf:knows with rules,<br>
-      let’s capture its properties.
+      Instead of capturing behavior with rules,<br>
+      we describe the concepts it uses.
     </h2>
 <pre><code>
 { ?personA foaf:knows ?personB. }
